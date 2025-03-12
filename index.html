@@ -8,12 +8,14 @@
     <button onclick="set2()">Set2</button>
   </body>
   <script>
+    const rel = 'apple-touch-icon';
+    
     function changeFavicon(base64Icon) {
-      const oldIcons = document.querySelectorAll('link[rel="icon"]');
+      const oldIcons = document.querySelectorAll(`link[rel="${rel}"]`);
       oldIcons.forEach(icon => icon.remove());
     
       const link = document.createElement('link');
-      link.rel = 'apple-touch-icon';
+      link.rel = rel;
       //link.rel = 'icon';
       link.href = `${base64Icon}`;
       document.head.appendChild(link);
