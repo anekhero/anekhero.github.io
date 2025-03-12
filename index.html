@@ -1,5 +1,28 @@
 <html>
   <body>
     <h1>Hello!</h1>
+    <button onclick="set1()">Set1</button>
+    <button onclick="set2()">Set2</button>
   </body>
+  <script>
+    function changeFavicon(base64Icon) {
+      const oldIcons = document.querySelectorAll('link[rel="icon"]');
+      oldIcons.forEach(icon => icon.remove());
+    
+      const link = document.createElement('link');
+      link.rel = 'icon';
+      link.href = `data:image/png;base64,${base64Icon}`;
+      document.head.appendChild(link);
+    }
+
+    function set1() {
+      changeFavicon('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nGNgoBAw4pL4v5ThP4biaEz1GALYNOIziIlUzejqmLAJkmIIEyGFhAAjObYjA4pdMFwMwJbCiAGM0QyM1PMCqa6AqWfCJkisZgYGKuRGAGHPGHjrBWZdAAAAAElFTkSuQmCC')
+    }
+
+    function set2() {
+      changeFavicon('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAU0lEQVR4nGNgoBAw4pT5z/Afi2oM9ZgGYNOIxyAmkjWjqWPCJkiKIUyE1BECjGTZjgQodsGwMQBLCiMKMDIwUtELpLoCqp4JmyCxmiFMXIDI3AgAIAYQHXSsovIAAAAASUVORK5CYII=')
+    }
+
+    setTimeout(() => set1(), 2000);
+  </script>
 </html>
