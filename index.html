@@ -1,6 +1,6 @@
 <html>
   <head>
-    <link rel="icon" href="/set0.png">
+    <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nN2TwQ4AEAxDu/3/P8+FRCjbcNKT1GtNAnApWW0YYASe+MlgwV2RZsMjp8zMlKgHepKT03tdT/BLAXthEQkg766QnaLxysxouK65or+xACgHEB2S4lsfAAAAAElFTkSuQmCC">
   </head>
   <body>
     <h1>Hello!</h1>
@@ -8,7 +8,7 @@
     <button onclick="set2()">Set2</button>
   </body>
   <script>
-    const rel = 'apple-touch-icon';
+    // const rel = 'apple-touch-icon';
     const rel = 'icon';
     
     function changeFavicon(base64Icon) {
@@ -23,18 +23,18 @@
     }
 
     function set0() {
-      changeFavicon('/set0.png')
-      changeFavicon('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAEklEQVR4nGNgGAWjYBSMAggAAAQQAAFVN1rQAAAAAElFTkSuQmCC')
+      //changeFavicon('/set0.png')
+      changeFavicon('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nN2TwQ4AEAxDu/3/P8+FRCjbcNKT1GtNAnApWW0YYASe+MlgwV2RZsMjp8zMlKgHepKT03tdT/BLAXthEQkg766QnaLxysxouK65or+xACgHEB2S4lsfAAAAAElFTkSuQmCC')
     }
 
     function set1() {
-      changeFavicon('/set1.png')
-      //changeFavicon('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nGNgoBAw4pL4v5ThP4biaEz1GALYNOIziIlUzejqmLAJkmIIEyGFhAAjObYjA4pdMFwMwJbCiAGM0QyM1PMCqa6AqWfCJkisZgYGKuRGAGHPGHjrBWZdAAAAAElFTkSuQmCC')
+      //changeFavicon('/set1.png')
+      changeFavicon('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nGNgoBAw4pL4v5ThP4biaEz1GALYNOIziIlUzejqmLAJkmIIEyGFhAAjObYjA4pdMFwMwJbCiAGM0QyM1PMCqa6AqWfCJkisZgYGKuRGAGHPGHjrBWZdAAAAAElFTkSuQmCC')
     }
 
     function set2() {
-      changeFavicon('/set2.png')
-      //changeFavicon('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAU0lEQVR4nGNgoBAw4pT5z/Afi2oM9ZgGYNOIxyAmkjWjqWPCJkiKIUyE1BECjGTZjgQodsGwMQBLCiMKMDIwUtELpLoCqp4JmyCxmiFMXIDI3AgAIAYQHXSsovIAAAAASUVORK5CYII=')
+      //changeFavicon('/set2.png')
+      changeFavicon('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAU0lEQVR4nGNgoBAw4pT5z/Afi2oM9ZgGYNOIxyAmkjWjqWPCJkiKIUyE1BECjGTZjgQodsGwMQBLCiMKMDIwUtELpLoCqp4JmyCxmiFMXIDI3AgAIAYQHXSsovIAAAAASUVORK5CYII=')
     }
 
     setTimeout(() => set1(), 2000);
