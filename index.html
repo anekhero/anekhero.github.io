@@ -1,8 +1,19 @@
 <html>
   <head>
-    <link id="favicon" rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAU0lEQVR4nGNgoBAw4pT5z/Afi2oM9ZgGYNOIxyAmkjWjqWPCJkiKIUyE1BECjGTZjgQodsGwMQBLCiMKMDIwUtELpLoCqp4JmyCxmiFMXIDI3AgAIAYQHXSsovIAAAAASUVORK5CYII=">
+    <link id="favicon" rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nN2TwQ4AEAxDu/3/P8+FRCjbcNKT1GtNAnApWW0YYASe+MlgwV2RZsMjp8zMlKgHepKT03tdT/BLAXthEQkg766QnaLxysxouK65or+xACgHEB2S4lsfAAAAAElFTkSuQmCC">
+    <style>
+      :root {
+        --header-logo: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nN2TwQ4AEAxDu/3/P8+FRCjbcNKT1GtNAnApWW0YYASe+MlgwV2RZsMjp8zMlKgHepKT03tdT/BLAXthEQkg766QnaLxysxouK65or+xACgHEB2S4lsfAAAAAElFTkSuQmCC")
+      }
+      .logo {
+        background-image: var(--header-logo);
+        width: 100px;
+        height: 100px;
+      }
+    </style>
   </head>
   <body>
+    <div class="logo"></div>
     <h1>Hello!</h1>
     <button onclick="set1()">Set1</button>
     <button onclick="set2()">Set2</button>
@@ -10,6 +21,11 @@
   <script>
     // const rel = 'apple-touch-icon';
     const rel = 'icon';
+    const root = document.documentElement;
+
+    const b64_0 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nN2TwQ4AEAxDu/3/P8+FRCjbcNKT1GtNAnApWW0YYASe+MlgwV2RZsMjp8zMlKgHepKT03tdT/BLAXthEQkg766QnaLxysxouK65or+xACgHEB2S4lsfAAAAAElFTkSuQmCC';
+    const b64_1 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nGNgoBAw4pL4v5ThP4biaEz1GALYNOIziIlUzejqmLAJkmIIEyGFhAAjObYjA4pdMFwMwJbCiAGM0QyM1PMCqa6AqWfCJkisZgYGKuRGAGHPGHjrBWZdAAAAAElFTkSuQmCC';
+    const b64_2 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAU0lEQVR4nGNgoBAw4pT5z/Afi2oM9ZgGYNOIxyAmkjWjqWPCJkiKIUyE1BECjGTZjgQodsGwMQBLCiMKMDIwUtELpLoCqp4JmyCxmiFMXIDI3AgAIAYQHXSsovIAAAAASUVORK5CYII=';
     
     function changeFavicon(base64Icon) {
       const oldIcons = document.querySelectorAll(`link[rel="${rel}"]`);
@@ -24,22 +40,28 @@
 
     function set0() {
       changeFavicon('/set0.png')
-      //changeFavicon('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nN2TwQ4AEAxDu/3/P8+FRCjbcNKT1GtNAnApWW0YYASe+MlgwV2RZsMjp8zMlKgHepKT03tdT/BLAXthEQkg766QnaLxysxouK65or+xACgHEB2S4lsfAAAAAElFTkSuQmCC')
+      // changeFavicon(b64_0)
+
+      root.style.setProperty('--header-logo', `url(${b64_0})`);
     }
 
     function set1() {
       changeFavicon('/set1.png')
-      //changeFavicon('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nGNgoBAw4pL4v5ThP4biaEz1GALYNOIziIlUzejqmLAJkmIIEyGFhAAjObYjA4pdMFwMwJbCiAGM0QyM1PMCqa6AqWfCJkisZgYGKuRGAGHPGHjrBWZdAAAAAElFTkSuQmCC')
+      // changeFavicon(b64_1)
+
+      root.style.setProperty('--header-logo', `url(${b64_1})`);
     }
 
     function set2() {
       changeFavicon('/set2.png')
-      //changeFavicon('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAU0lEQVR4nGNgoBAw4pT5z/Afi2oM9ZgGYNOIxyAmkjWjqWPCJkiKIUyE1BECjGTZjgQodsGwMQBLCiMKMDIwUtELpLoCqp4JmyCxmiFMXIDI3AgAIAYQHXSsovIAAAAASUVORK5CYII=')
+      // changeFavicon(b64_2)
+
+      root.style.setProperty('--header-logo', `url(${b64_2})`);
     }
 
-    // setTimeout(() => set1(), 2000);
-    // setTimeout(() => set2(), 3000);
-    // setTimeout(() => set1(), 4000);
-    // setTimeout(() => set2(), 5000);
+    setTimeout(() => set1(), 2000);
+    setTimeout(() => set2(), 3000);
+    setTimeout(() => set1(), 4000);
+    setTimeout(() => set2(), 5000);
   </script>
 </html>
