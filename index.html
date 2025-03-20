@@ -3,10 +3,16 @@
     <link id="favicon" rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nN2TwQ4AEAxDu/3/P8+FRCjbcNKT1GtNAnApWW0YYASe+MlgwV2RZsMjp8zMlKgHepKT03tdT/BLAXthEQkg766QnaLxysxouK65or+xACgHEB2S4lsfAAAAAElFTkSuQmCC">
     <style>
       :root {
-        --header-logo: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nN2TwQ4AEAxDu/3/P8+FRCjbcNKT1GtNAnApWW0YYASe+MlgwV2RZsMjp8zMlKgHepKT03tdT/BLAXthEQkg766QnaLxysxouK65or+xACgHEB2S4lsfAAAAAElFTkSuQmCC")
+        --header-logo-png: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nN2TwQ4AEAxDu/3/P8+FRCjbcNKT1GtNAnApWW0YYASe+MlgwV2RZsMjp8zMlKgHepKT03tdT/BLAXthEQkg766QnaLxysxouK65or+xACgHEB2S4lsfAAAAAElFTkSuQmCC");
+        --header-logo-svg: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnL3N2ZyI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIGZpbGw9ImdyZWVuIi8+PC9zdmc+");
       }
-      .logo {
-        background-image: var(--header-logo);
+      .logo-png {
+        background-image: var(--header-logo-png);
+        width: 100px;
+        height: 100px;
+      }
+      .logo-svg {
+        background-image: var(--header-logo-svg);
         width: 100px;
         height: 100px;
       }
@@ -26,6 +32,9 @@
     const b64_0 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nN2TwQ4AEAxDu/3/P8+FRCjbcNKT1GtNAnApWW0YYASe+MlgwV2RZsMjp8zMlKgHepKT03tdT/BLAXthEQkg766QnaLxysxouK65or+xACgHEB2S4lsfAAAAAElFTkSuQmCC';
     const b64_1 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAVElEQVR4nGNgoBAw4pL4v5ThP4biaEz1GALYNOIziIlUzejqmLAJkmIIEyGFhAAjObYjA4pdMFwMwJbCiAGM0QyM1PMCqa6AqWfCJkisZgYGKuRGAGHPGHjrBWZdAAAAAElFTkSuQmCC';
     const b64_2 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAU0lEQVR4nGNgoBAw4pT5z/Afi2oM9ZgGYNOIxyAmkjWjqWPCJkiKIUyE1BECjGTZjgQodsGwMQBLCiMKMDIwUtELpLoCqp4JmyCxmiFMXIDI3AgAIAYQHXSsovIAAAAASUVORK5CYII=';
+    const b64s_0 = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0icmVkIi8+Cjwvc3ZnPg==';
+    const b64s_1 = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSI0MCIgZmlsbD0ib3JhbmdlIi8+Cjwvc3ZnPg==';
+    const b64s_2 = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnL3N2ZyI+PGNpcmNsZSBjeD0iNTAiIGN5PSI1MCIgcj0iNDAiIGZpbGw9ImdyZWVuIi8+PC9zdmc+';
     
     function changeFavicon(base64Icon) {
       const oldIcons = document.querySelectorAll(`link[rel="${rel}"]`);
@@ -42,21 +51,24 @@
       changeFavicon('/set0.png')
       // changeFavicon(b64_0)
 
-      root.style.setProperty('--header-logo', `url(${b64_0})`);
+      root.style.setProperty('--header-logo-png', `url(${b64_0})`);
+      root.style.setProperty('--header-logo-svg', `url(${b64s_0})`);
     }
 
     function set1() {
       changeFavicon('/set1.png')
       // changeFavicon(b64_1)
 
-      root.style.setProperty('--header-logo', `url(${b64_1})`);
+      root.style.setProperty('--header-logo-png', `url(${b64_1})`);
+      root.style.setProperty('--header-logo-svg', `url(${b64s_1})`);
     }
 
     function set2() {
       changeFavicon('/set2.png')
       // changeFavicon(b64_2)
 
-      root.style.setProperty('--header-logo', `url(${b64_2})`);
+      root.style.setProperty('--header-logo-png', `url(${b64_2})`);
+      root.style.setProperty('--header-logo-svg', `url(${b64s_2})`);
     }
 
     setTimeout(() => set1(), 2000);
